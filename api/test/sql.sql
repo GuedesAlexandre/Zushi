@@ -22,7 +22,7 @@ CREATE TABLE panier(
 
 CREATE TABLE commande(
    commande_id INT,
-   _date DATETIME NOT NULL,
+   _date DATETIME DEFAULT CURRENT_TIMESTAMP,
    prix DOUBLE,
    panier_id INT NOT NULL,
    PRIMARY KEY(commande_id),
