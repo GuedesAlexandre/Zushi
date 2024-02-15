@@ -1,34 +1,90 @@
 <?php
 
-namespace Entity;
+namespace App\Entity;
 
+use App\Repository\ContientRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
- * Contient
- *
- * @ORM\Table(name="contient", indexes={@ORM\Index(name="aliment_id", columns={"aliment_id"})})
- * @ORM\Entity
- * @apiResource()
+ * @ORM\Entity(repositoryClass=ContientRepository::class)
  */
 class Contient
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="box_id", type="bigint", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
-    private $boxId;
+    private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="aliment_id", type="string", length=50, nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\ManyToMany(targetEntity=box::class, inversedBy="id_commande")
      */
-    private $alimentId;
+    private $id_box;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Commande::class, inversedBy="id_contients")
+     */
+    private $id_commande;
+
+    public function __construct()
+    {
+        $this->id_box = new ArrayCollection();
+        $this->id_commande = new ArrayCollection();
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return Collection<int, box>
+     */
+    public function getIdBox(): Collection
+    {
+        return $this->id_box;
+    }
+
+    public function addIdBox(box $idBox): self
+    {
+        if (!$this->id_box->contains($idBox)) {
+            $this->id_box[] = $idBox;
+        }
+
+        return $this;
+    }
+
+    public function removeIdBox(box $idBox): self
+    {
+        $this->id_box->removeElement($idBox);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Commande>
+     */
+    public function getIdCommande(): Collection
+    {
+        return $this->id_commande;
+    }
+
+    public function addIdCommande(Commande $idCommande): self
+    {
+        if (!$this->id_commande->contains($idCommande)) {
+            $this->id_commande[] = $idCommande;
+        }
+
+        return $this;
+    }
+
+    public function removeIdCommande(Commande $idCommande): self
+    {
+        $this->id_commande->removeElement($idCommande);
+
+        return $this;
+    }
 }

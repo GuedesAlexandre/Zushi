@@ -30,6 +30,9 @@
         "symfony/validator": "5.4.*",
         "symfony/yaml": "5.4.*"
     },
+    "require-dev": {
+        "symfony/maker-bundle": "^1.43"
+    },
     "config": {
         "allow-plugins": {
             "composer/package-versions-deprecated": true,
@@ -78,8 +81,5 @@
             "allow-contrib": false,
             "require": "5.4.*"
         }
-    },
-    "require-dev": {
-        "symfony/maker-bundle": "*"
     }
 }

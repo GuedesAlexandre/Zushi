@@ -1,46 +1,97 @@
 <?php
 
-namespace Entity;
+namespace App\Entity;
 
+use App\Repository\CommandeRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
- * Commande
- *
- * @ORM\Table(name="commande", indexes={@ORM\Index(name="panier_id", columns={"panier_id"})})
- * @ORM\Entity
- * @apiResource()
+ * @ORM\Entity(repositoryClass=CommandeRepository::class)
  */
 class Commande
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="commande_id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
-    private $commandeId;
+    private $id;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="_date", type="datetime", nullable=false)
+     * @ORM\Column(type="datetime")
      */
     private $date;
 
     /**
-     * @var float|null
-     *
-     * @ORM\Column(name="prix", type="float", precision=10, scale=0, nullable=true)
+     * @ORM\Column(type="float")
      */
-    private $prix;
+    private $prix_total;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="panier_id", type="integer", nullable=false)
+     * @ORM\ManyToMany(targetEntity=Contient::class, mappedBy="id_commande")
      */
-    private $panierId;
+    private $id_contients;
+
+    public function __construct()
+    {
+        $this->id_contients = new ArrayCollection();
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    public function getPrixTotal(): ?float
+    {
+        return $this->prix_total;
+    }
+
+    public function setPrixTotal(float $prix_total): self
+    {
+        $this->prix_total = $prix_total;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Contient>
+     */
+    public function getIdContients(): Collection
+    {
+        return $this->id_contients;
+    }
+
+    public function addIdContient(Contient $idContient): self
+    {
+        if (!$this->id_contients->contains($idContient)) {
+            $this->id_contients[] = $idContient;
+            $idContient->addIdCommande($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIdContient(Contient $idContient): self
+    {
+        if ($this->id_contients->removeElement($idContient)) {
+            $idContient->removeIdCommande($this);
+        }
+
+        return $this;
+    }
 }
