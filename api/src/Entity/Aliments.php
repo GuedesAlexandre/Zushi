@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=AlimmentsRepository::class)
  */
-class Alimments
+class Aliments
 {
     /**
      * @ORM\Id
@@ -80,7 +80,7 @@ class Alimments
     {
         if (!$this->id_possedes->contains($idPossede)) {
             $this->id_possedes[] = $idPossede;
-            $idPossede->addIdAlimment($this);
+            $idPossede->addIdAliment($this);
         }
 
         return $this;
@@ -89,7 +89,7 @@ class Alimments
     public function removeIdPossede(Possede $idPossede): self
     {
         if ($this->id_possedes->removeElement($idPossede)) {
-            $idPossede->removeIdAlimment($this);
+            $idPossede->removeIdAliment($this);
         }
 
         return $this;
