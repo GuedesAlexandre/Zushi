@@ -2,14 +2,18 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\PossedeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=PossedeRepository::class)
+ * @ApiResource
  */
+#[ApiResource()]
 class Possede
 {
     /**
@@ -19,49 +23,26 @@ class Possede
      */
     private $id;
 
-    /**
-     * @ORM\ManyToMany(targetEntity=alimments::class, inversedBy="id_possedes")
-     */
-    private $id_alimments;
 
     /**
      * @ORM\ManyToMany(targetEntity=box::class, inversedBy="id_possedes")
      */
     private $id_box;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Aliments::class, inversedBy="id_possedes")
+     */
+    private $id_aliments;
+
     public function __construct()
     {
-        $this->id_alimments = new ArrayCollection();
         $this->id_box = new ArrayCollection();
+        $this->id_aliments = new ArrayCollection();
     }
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    /**
-     * @return Collection<int, alimments>
-     */
-    public function getIdAlimments(): Collection
-    {
-        return $this->id_alimments;
-    }
-
-    public function addIdAlimment(alimments $idAlimment): self
-    {
-        if (!$this->id_alimments->contains($idAlimment)) {
-            $this->id_alimments[] = $idAlimment;
-        }
-
-        return $this;
-    }
-
-    public function removeIdAlimment(alimments $idAlimment): self
-    {
-        $this->id_alimments->removeElement($idAlimment);
-
-        return $this;
     }
 
     /**
@@ -84,6 +65,30 @@ class Possede
     public function removeIdBox(box $idBox): self
     {
         $this->id_box->removeElement($idBox);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Aliments>
+     */
+    public function getIdAliments(): Collection
+    {
+        return $this->id_aliments;
+    }
+
+    public function addIdAliment(Aliments $idAliment): self
+    {
+        if (!$this->id_aliments->contains($idAliment)) {
+            $this->id_aliments[] = $idAliment;
+        }
+
+        return $this;
+    }
+
+    public function removeIdAliment(Aliments $idAliment): self
+    {
+        $this->id_aliments->removeElement($idAliment);
 
         return $this;
     }
