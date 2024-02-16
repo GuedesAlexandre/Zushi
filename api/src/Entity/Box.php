@@ -2,14 +2,41 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\BoxRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=BoxRepository::class)
+ * @ApiResource
  */
+#[ApiResource(
+
+    normalizationContext: [
+        'groups' => [
+            'read:collection',
+            'read:item',
+            'box',
+            'write'
+        ]
+    ],
+    itemOperations: [
+        'get' => [
+            'normalization_context' => [
+                'groups' => ['read:collection', 'read:item', 'box']
+            ]
+        ],
+        'put' => [
+            'denormalization_context' => [
+                'groups' => ['write']
+            ]
+        ]
+    ]
+)]
+
 class Box
 {
     /**
@@ -17,31 +44,37 @@ class Box
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
+    #[Groups(['read:collection', 'read:item'])]
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
+    #[Groups(['read:collection', 'read:item'])]
     private $nom;
 
     /**
      * @ORM\Column(type="float")
      */
+    #[Groups(['read:collection', 'read:item'])]
     private $prix;
 
     /**
      * @ORM\Column(type="integer")
      */
+    #[Groups(['read:collection', 'read:item'])]
     private $pieces;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
+    #[Groups(['read:collection', 'read:item'])]
     private $img;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
+    #[Groups(['read:collection', 'read:item'])]
     private $saveurs;
 
     /**
