@@ -1,0 +1,14 @@
+
+  <div *ngFor="let item of boxes">
+    
+    
+
+   <div style="font-weight: bold; font-size:32px"> {{ item.nom }}{{item.prix}}€</div>
+<div  style = "color:red;"*ngFor="let items of item.aliments">{{ items.nom}}
+
+</div>
+<h2 style="font-size:22px;">Saveurs:</h2>
+<div *ngFor="let items of item.saveurs">{{ items}}
+
+</div>
+
