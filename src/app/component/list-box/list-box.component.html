@@ -1,14 +1,28 @@
+<div class="flex justify-between">
+  <div id="boxName" class="w-1/2">
 
-  <div *ngFor="let item of boxes">
-    
-    
-
-   <div style="font-weight: bold; font-size:32px"> {{ item.nom }}{{item.prix}}€</div>
-<div  style = "color:red;"*ngFor="let items of item.aliments">{{ items.nom}}
-
-</div>
-<h2 style="font-size:22px;">Saveurs:</h2>
-<div *ngFor="let items of item.saveurs">{{ items}}
-
+  </div>
+  <div id="prixTotal"></div>
+  <div class="w-1/2">
+    <div *ngFor="let item of boxes; let i = index" class="mb-4">
+      <div class="font-bold text-2xl">
+        {{ item.nom }} {{ item.prix }}€
+      </div>
+      <div class="text-xl">Saveurs:</div>
+      <ul>
+        <li *ngFor="let saveur of item.saveurs.split(', ')">
+          {{ saveur }}
+        </li>
+      </ul>
+      <div>
+        <button (click)="incrementAndDisplay(item.id)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          +
+        </button>
+        <button (click)="decrementAndDisplay(item.id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+          -
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 
