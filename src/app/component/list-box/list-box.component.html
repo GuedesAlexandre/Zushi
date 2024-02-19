@@ -1,11 +1,20 @@
-<div class="flex justify-between">
-  <div id="boxName" class="w-1/2">
-    <h1>Cart</h1>
-    <hr>
 
-  </div>
-  <div id="prixTotal"></div>
-  <div class="w-1/2">
+
+
+
+
+
+<aside class="hidden md:block" style="background-image: url('../../../assets/img_market.png'); background-size: cover; z-index: 3; background-position: right; height: 100vh; width: 20%; position: fixed; right: 0;"></aside>
+
+<div  >
+  <app-header></app-header>
+
+
+</div>
+<div class="flex justify-center items-center space-x-20" style="
+    margin-top: 12%;
+">
+  <div class="w-1/2 mt-20" style="overflow-y: scroll; max-height: 600px; max-width: 900px;">
     <div *ngFor="let item of boxes; let i = index" class="mb-4">
       <div class="font-bold text-2xl">
         {{ item.nom }} {{ item.prix }}€
@@ -26,5 +35,8 @@
       </div>
     </div>
   </div>
+  <div class="w-1/2">
+    <div id="boxName" class="w-1/2"></div>
+    <div style="font-weight: bold;"id="prixTotal"></div>
+  </div>
 </div>
-

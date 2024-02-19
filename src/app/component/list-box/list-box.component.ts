@@ -32,7 +32,7 @@ export class ListBoxComponent implements OnInit {
       this.boxQuantities[boxId] = (this.boxQuantities[boxId] || 0) + 1;
       const div = document.getElementById('boxName');
       if (div) {
-        div.innerHTML = '';
+        div.innerHTML = '<h1>Cart</h1>';
         for (const [id, quantity] of Object.entries(this.boxQuantities)) {
           const selectedBox = this.boxes.find((b: any) => b.id === parseInt(id));
           if (selectedBox) {
@@ -83,7 +83,7 @@ export class ListBoxComponent implements OnInit {
         this.totalPrice = this.orders.reduce((total, order) => total + order.price, 0);
         const PrixTotal = document.getElementById('prixTotal');
         if (PrixTotal) {
-          PrixTotal.innerHTML = "Le prix total est:"  +this.totalPrice + "€";
+          PrixTotal.innerHTML = "Le prix total est:"  + this.totalPrice.toFixed(2) + "€";
         }
       }
 
