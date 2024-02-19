@@ -14,15 +14,15 @@
 <div class="flex justify-center items-center space-x-20" style="
     margin-top: 12%;
 ">
-  <div class="w-1/2 mt-20" style="overflow-y: scroll; max-height: 600px; max-width: 900px;">
+  <div class="w-1/2 mt-20 d-flex " style="overflow-y: scroll; max-height: 600px; max-width: 900px;">
     <div *ngFor="let item of boxes; let i = index" class="mb-4">
       <div class="font-bold text-2xl">
-        {{ item.nom }} {{ item.prix }}€
+        <img src="{{item.img}}" alt="{{item.nom}}" width="300" height="300">{{ item.nom }} {{ item.prix.toFixed(2) }}€
       </div>
-      <div class="text-xl">Saveurs:</div>
+      <div class="text-xl">Compositions</div>
       <ul>
-        <li *ngFor="let saveur of item.saveurs.split(', ')">
-          {{ saveur }}
+        <li *ngFor="let aliments of item.id_aliments">
+          {{aliments.quantite}}x     {{aliments.nom }}
         </li>
       </ul>
       <div>

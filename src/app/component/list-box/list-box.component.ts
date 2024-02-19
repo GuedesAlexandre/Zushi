@@ -21,7 +21,7 @@ export class ListBoxComponent implements OnInit {
 
   selectedBoxes: { id: number, price: number }[] = [];
 
-  orders: { boxId: number, price: number }[] = [];
+  orders: { boxId: number, prixTotal?: number }[] = [];
   totalPrice: number = 0;
 
   boxQuantities: { [boxId: number]: number } = {};
@@ -41,11 +41,11 @@ export class ListBoxComponent implements OnInit {
         }
       }
 
-      this.orders.push({ boxId: box.id, price: box.prix });
+      this.orders.push({ boxId: box.id});
       console.table(this.orders);
 
       // Mettre à jour le prix total
-      this.totalPrice = this.orders.reduce((total, order) => total + order.price, 0);
+      this.totalPrice = this.orders.reduce((total, order) => total + box.prix, 0);
       console.log('Prix total:', this.totalPrice);
       const PrixTotal = document.getElementById('prixTotal');
       if (PrixTotal) {
@@ -80,7 +80,7 @@ export class ListBoxComponent implements OnInit {
         // Réduire le prix
 
         // Mettre à jour le prix total
-        this.totalPrice = this.orders.reduce((total, order) => total + order.price, 0);
+        this.totalPrice = this.orders.reduce((total, order) => total + box.prix, 0);
         const PrixTotal = document.getElementById('prixTotal');
         if (PrixTotal) {
           PrixTotal.innerHTML = "Le prix total est:"  + this.totalPrice.toFixed(2) + "€";
