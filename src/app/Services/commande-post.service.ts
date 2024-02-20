@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -7,12 +8,11 @@ import { Observable } from 'rxjs';
 })
 export class CommandePostService {
   constructor(private http: HttpClient) { }
-
-  postData(): Observable<any> {
+  
+  postData(data: any): Observable<any> {
     const apiUrl = 'http://localhost:8000/api/commandes'; // Remplacez par l'URL de votre API
-
-    return this.http.post(apiUrl, {});
-
+  
+    return this.http.post(apiUrl, data);
   }
 }
 

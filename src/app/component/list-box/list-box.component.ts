@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BoxesService } from 'src/app/Services/boxes.service';
 import { OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { CommandePostService } from 'src/app/Services/commande-post.service';
 
 @Component({
   selector: 'app-list-box',
@@ -11,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 export class ListBoxComponent implements OnInit {
   boxes: any = [];
 
-  constructor(private boxesService: BoxesService) { }
+  constructor(private boxesService: BoxesService, private commandePostService: CommandePostService ) { }
 
   ngOnInit(): void {
     this.boxesService.fetchData().subscribe((data: any) => {
@@ -21,7 +22,7 @@ export class ListBoxComponent implements OnInit {
 
   selectedBoxes: { id: number, price: number }[] = [];
 
-  orders: { boxId: number, price: number }[] = [];
+  orders: { boxId: number, prixTotal?: number }[] = [];
   totalPrice: number = 0;
 
   boxQuantities: { [boxId: number]: number } = {};
@@ -32,7 +33,7 @@ export class ListBoxComponent implements OnInit {
       this.boxQuantities[boxId] = (this.boxQuantities[boxId] || 0) + 1;
       const div = document.getElementById('boxName');
       if (div) {
-        div.innerHTML = '';
+        div.innerHTML = '<h1>Cart</h1>';
         for (const [id, quantity] of Object.entries(this.boxQuantities)) {
           const selectedBox = this.boxes.find((b: any) => b.id === parseInt(id));
           if (selectedBox) {
@@ -41,11 +42,11 @@ export class ListBoxComponent implements OnInit {
         }
       }
 
-      this.orders.push({ boxId: box.id, price: box.prix });
+      this.orders.push({ boxId: box.id});
       console.table(this.orders);
 
       // Mettre à jour le prix total
-      this.totalPrice = this.orders.reduce((total, order) => total + order.price, 0);
+      this.totalPrice = this.orders.reduce((total, order) => total + box.prix, 0);
       console.log('Prix total:', this.totalPrice);
       const PrixTotal = document.getElementById('prixTotal');
       if (PrixTotal) {
@@ -80,10 +81,10 @@ export class ListBoxComponent implements OnInit {
         // Réduire le prix
 
         // Mettre à jour le prix total
-        this.totalPrice = this.orders.reduce((total, order) => total + order.price, 0);
+        this.totalPrice = this.orders.reduce((total, order) => total + box.prix, 0);
         const PrixTotal = document.getElementById('prixTotal');
         if (PrixTotal) {
-          PrixTotal.innerHTML = "Le prix total est:"  +this.totalPrice + "€";
+          PrixTotal.innerHTML = "Le prix total est:"  + this.totalPrice.toFixed(2) + "€";
         }
       }
 
@@ -93,6 +94,31 @@ export class ListBoxComponent implements OnInit {
       }
     }
   }
-    }
+
+concatenateOrders(orders: { boxId: number, prixTotal?: number }[]): string {
+  const currentDate = new Date().toISOString();
+  const prixTotal = this.totalPrice;
+  const idBoxs = orders.map(order => `api/boxs/${order.boxId}`);
+  const idBoissons: string[] = []; // Replace "string" with the actual values
+
+  const jsonBody = {
+    date: currentDate,
+    prixTotal: prixTotal,
+    idBoxs: idBoxs,
+    idBoissons: idBoissons
+  };
+  this.commandePostService.postData(jsonBody).subscribe(response => {
+    console.log(response);
+  }, error => {
+    console.error(error);
+  });
+
+  return JSON.stringify(jsonBody);
+}
+
+}
+    
   
+
+
 
