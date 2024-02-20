@@ -93,6 +93,25 @@ export class ListBoxComponent implements OnInit {
       }
     }
   }
+
+concatenateOrders(orders: { boxId: number, prixTotal?: number }[]): string {
+  const currentDate = new Date().toISOString();
+  const prixTotal = this.totalPrice;
+  const idBoxs = orders.map(order => `api/boxs/${order.boxId}`);
+  const idBoissons: string[] = []; // Replace "string" with the actual values
+
+  const jsonBody = {
+    date: currentDate,
+    prixTotal: prixTotal,
+    idBoxs: idBoxs,
+    idBoissons: idBoissons
+  };
+  console.log(jsonBody);
+  return JSON.stringify(jsonBody);
+
+}
     }
   
+
+
 

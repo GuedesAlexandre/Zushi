@@ -32,11 +32,14 @@
         <button (click)="decrementAndDisplay(item.id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
           -
         </button>
+
       </div>
     </div>
   </div>
   <div class="w-1/2">
     <div id="boxName" class="w-1/2"></div>
     <div style="font-weight: bold;"id="prixTotal"></div>
+    <button (click)="concatenateOrders(this.orders)">commande</button>
   </div>
 </div>
+
