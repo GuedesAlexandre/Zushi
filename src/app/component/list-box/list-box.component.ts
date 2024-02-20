@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BoxesService } from 'src/app/Services/boxes.service';
 import { OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { CommandePostService } from 'src/app/Services/commande-post.service';
 
 @Component({
   selector: 'app-list-box',
@@ -11,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 export class ListBoxComponent implements OnInit {
   boxes: any = [];
 
-  constructor(private boxesService: BoxesService) { }
+  constructor(private boxesService: BoxesService, private commandePostService: CommandePostService ) { }
 
   ngOnInit(): void {
     this.boxesService.fetchData().subscribe((data: any) => {
@@ -106,11 +107,17 @@ concatenateOrders(orders: { boxId: number, prixTotal?: number }[]): string {
     idBoxs: idBoxs,
     idBoissons: idBoissons
   };
-  console.log(jsonBody);
+  this.commandePostService.postData(jsonBody).subscribe(response => {
+    console.log(response);
+  }, error => {
+    console.error(error);
+  });
+
   return JSON.stringify(jsonBody);
+}
 
 }
-    }
+    
   
 
 
