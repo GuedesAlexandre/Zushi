@@ -16,3 +16,7 @@ package-lock.json
 npm-debug.log
 ng-bullet-report.xml
 tsconfig.tsbuildinfo
+
+.angular/
+.angular/cache/
+node_modules/.cache/
