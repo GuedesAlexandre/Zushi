@@ -1,11 +1,18 @@
+node_modules/
 # Dossiers
-/node_modules
-/dist
-/.angular
+node_modules/
+dist/
+tmp/
+out-tsc/
+
 # Fichiers
-/.editorconfig
-/.eslintrc.json
-/tsconfig.json
-/tslint.json
-/karma.conf.js
-/protractor.conf.js
+*.log
+*.pid
+*.seed
+*.pid.lock
+*.log.*
+yarn.lock
+package-lock.json
+npm-debug.log
+ng-bullet-report.xml
+tsconfig.tsbuildinfo
