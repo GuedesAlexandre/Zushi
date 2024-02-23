@@ -13,10 +13,10 @@
 </div>
 <br>
 <h1  style="margin-left: 3%;"class=" mx-7 font-bold text-5xl"> Bienvenue sur le board de commande Zushi !</h1>
-<div class="flex justify-center items-center space-x-20" style="
-    margin-top: 12%;
+<div class="flex justify-center items-center space-x-20 border-2 border-orange-600" style="
+    margin-top: 7%;
 ">
-  <div style="margin-left:12%;" class="w-1/2 mt-20 d-flex " style="overflow-y: scroll; max-height: 600px; max-width: 900px;">
+  <div style="margin-left:12%;" class="w-1/2 mt-20 d-flex " style="overflow-y: scroll; overflow-x: scroll; max-height: 600px; max-width: 900px;">
     <div *ngFor="let item of boxes; let i = index" class="mb-4 flex flex-col space-x-20 justify-center">
       <div style="margin-left:10%;" class="flex flex-col  ">
         <img src="{{item.img}}" alt="{{item.nom}}" width="300" height="300"><span class="font-bold text-xl">{{ item.nom }} </span> <span class="font-bold">{{ item.prix.toFixed(2) }}€</span>

@@ -4,3 +4,7 @@ dist/
 .env
 .DS_Store
 *.log
+
+.angular/
+.angular/cache/
+node_modules/.cache/

@@ -8,12 +8,14 @@ import { ListBoxComponent } from './component/list-box/list-box.component';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import {NgOptimizedImage} from "@angular/common";
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ListBoxComponent,
+    FooterComponent
     
   ],
   imports: [
