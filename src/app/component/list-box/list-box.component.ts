@@ -33,7 +33,7 @@ export class ListBoxComponent implements OnInit {
       this.boxQuantities[boxId] = (this.boxQuantities[boxId] || 0) + 1;
       const div = document.getElementById('boxName');
       if (div) {
-        div.innerHTML = '<h1>Cart</h1>';
+        div.innerHTML = '<img src="../../../assets/Group 61.svg"/>';
         for (const [id, quantity] of Object.entries(this.boxQuantities)) {
           const selectedBox = this.boxes.find((b: any) => b.id === parseInt(id));
           if (selectedBox) {
@@ -95,7 +95,11 @@ export class ListBoxComponent implements OnInit {
     }
   }
 
-concatenateOrders(orders: { boxId: number, prixTotal?: number }[]): string {
+concatenateOrders(orders: { boxId: number, prixTotal?: number }[]): any {
+  if(this.orders.length === 0) {
+  
+    alert('Aucune commande')
+  }else{
   const currentDate = new Date().toISOString();
   const prixTotal = this.totalPrice;
   const idBoxs = orders.map(order => `api/boxs/${order.boxId}`);
@@ -112,9 +116,30 @@ concatenateOrders(orders: { boxId: number, prixTotal?: number }[]): string {
   }, error => {
     console.error(error);
   });
+ alert("commande passé");
+ 
 
+  localStorage.setItem('commande', JSON.stringify(jsonBody));
+  location.reload();
   return JSON.stringify(jsonBody);
+
+
+
+
 }
+ 
+  
+}
+
+cancelOrders(): void {
+  if (this.orders && this.orders.length > 0) {
+    this.orders = [];
+    location.reload();
+  }else{
+    alert("pas de commande");
+  }
+}
+
 
 }
     
