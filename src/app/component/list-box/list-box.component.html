@@ -15,31 +15,48 @@
     margin-top: 12%;
 ">
   <div class="w-1/2 mt-20 d-flex " style="overflow-y: scroll; max-height: 600px; max-width: 900px;">
-    <div *ngFor="let item of boxes; let i = index" class="mb-4">
-      <div class="font-bold text-2xl">
-        <img src="{{item.img}}" alt="{{item.nom}}" width="300" height="300">{{ item.nom }} {{ item.prix.toFixed(2) }}€
-      </div>
-      <div class="text-xl">Compositions</div>
-      <ul>
-        <li *ngFor="let aliments of item.id_aliments">
-          {{aliments.quantite}}x     {{aliments.nom }}
-        </li>
-      </ul>
-      <div>
-        <button (click)="incrementAndDisplay(item.id)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    <div *ngFor="let item of boxes; let i = index" class="mb-4 flex flex-col space-x-20">
+      <div class="">
+        <img src="{{item.img}}" alt="{{item.nom}}" width="300" height="300"><span class="font-bold text-xl">{{ item.nom }} </span><br> <span class="font-bold">{{ item.prix.toFixed(2) }}€</span>
+       <br> <br><div class="text-xl">Compositions</div>
+        <div *ngFor="let aliments of item.id_aliments">
+          <div >
+            {{aliments.quantite}}x     {{aliments.nom }}
+          </div>
+        </div>
+      </div><br>
+      
+      <div class="d-flex gap-2 space-x-5">
+        
+        <button style="padding:10px;" (click)="incrementAndDisplay(item.id)" class="bg-blue-500 hover:bg-blue-700 text-white spac font-bold py-2 px-4 rounded">
           +
         </button>
-        <button (click)="decrementAndDisplay(item.id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+    
+        <button style="padding:10px;" (click)="decrementAndDisplay(item.id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
           -
         </button>
 
       </div>
+      <br><br>
     </div>
   </div>
-  <div class="w-1/2">
+  <div class="w-1/2 space-x-50">
     <div id="boxName" class="w-1/2"></div>
-    <div style="font-weight: bold;"id="prixTotal"></div>
-    <button (click)="concatenateOrders(this.orders)">commande</button>
+    <div  class="d-flex  "style="font-weight: bold;"id="prixTotal"></div>
+
+    <div class="flex gap-2 ">
+      <button style="padding: 10px;" class="bg-red-500 gap-2 px-10 py-10 hover:bg-blue-700 text-white font-bold py-2 px-4" (click)="cancelOrders()">Annuler</button>
+      <button class="flex items-center gap-2 px-10 py-10 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20" style="padding: 10px;" type="button" (click)="concatenateOrders(this.orders)">
+        Commander
+        
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+        </svg>
+      </button>
+    </div>
+   
+  
+    
   </div>
 </div>
 
