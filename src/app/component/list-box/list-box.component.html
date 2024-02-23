@@ -11,14 +11,16 @@
 
 
 </div>
+<br>
+<h1  style="margin-left: 3%;"class=" mx-7 font-bold text-5xl"> Bienvenue sur le board de commande Zushi !</h1>
 <div class="flex justify-center items-center space-x-20" style="
     margin-top: 12%;
 ">
-  <div class="w-1/2 mt-20 d-flex " style="overflow-y: scroll; max-height: 600px; max-width: 900px;">
-    <div *ngFor="let item of boxes; let i = index" class="mb-4 flex flex-col space-x-20">
-      <div class="">
-        <img src="{{item.img}}" alt="{{item.nom}}" width="300" height="300"><span class="font-bold text-xl">{{ item.nom }} </span><br> <span class="font-bold">{{ item.prix.toFixed(2) }}€</span>
-       <br> <br><div class="text-xl">Compositions</div>
+  <div style="margin-left:12%;" class="w-1/2 mt-20 d-flex " style="overflow-y: scroll; max-height: 600px; max-width: 900px;">
+    <div *ngFor="let item of boxes; let i = index" class="mb-4 flex flex-col space-x-20 justify-center">
+      <div style="margin-left:10%;" class="flex flex-col  ">
+        <img src="{{item.img}}" alt="{{item.nom}}" width="300" height="300"><span class="font-bold text-xl">{{ item.nom }} </span> <span class="font-bold">{{ item.prix.toFixed(2) }}€</span>
+        <br><div class="text-xl">Compositions</div>
         <div *ngFor="let aliments of item.id_aliments">
           <div >
             {{aliments.quantite}}x     {{aliments.nom }}

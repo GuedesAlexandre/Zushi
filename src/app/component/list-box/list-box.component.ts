@@ -117,6 +117,7 @@ concatenateOrders(orders: { boxId: number, prixTotal?: number }[]): any {
     console.error(error);
   });
  alert("commande passé");
+ 
 
   localStorage.setItem('commande', JSON.stringify(jsonBody));
   location.reload();
