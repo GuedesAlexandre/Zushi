@@ -20,3 +20,4 @@ tsconfig.tsbuildinfo
 .angular/
 .angular/cache/
 node_modules/.cache/
+.angular/cache/16.2.12/angular-webpack/b21d3c0a540e38f38af363516a93eddb4e5fdfb5/2.pack
