@@ -46,7 +46,7 @@ export class ListBoxComponent implements OnInit {
       console.table(this.orders);
 
       // Mettre à jour le prix total
-      this.totalPrice = this.orders.reduce((total, order) => total + box.prix, 0);
+      this.totalPrice = this.orders.reduce((total) => total + box.prix, 0);
       console.log('Prix total:', this.totalPrice);
       const PrixTotal = document.getElementById('prixTotal');
       if (PrixTotal) {

@@ -14,7 +14,7 @@
 <br>
 <h1  style="margin-left: 3%;"class=" mx-7 font-bold text-5xl"> Bienvenue sur le board de commande Zushi !</h1>
 <div class="flex justify-center items-center space-x-20 border-2 border-orange-600" style="
-    margin-top: 7%;
+    margin-top: 4%;
 ">
   <div style="margin-left:12%;" class="w-1/2 mt-20 d-flex " style="overflow-y: scroll; overflow-x: scroll; max-height: 600px; max-width: 900px;">
     <div *ngFor="let item of boxes; let i = index" class="mb-4 flex flex-col space-x-20 justify-center">
@@ -42,11 +42,11 @@
       <br><br>
     </div>
   </div>
-  <div class="w-1/2 space-x-50">
+  <div class="w-1/2 space-x-50 ">
     <div id="boxName" class="w-1/2"></div>
     <div  class="d-flex  "style="font-weight: bold;"id="prixTotal"></div>
 
-    <div class="flex gap-2 ">
+    <div  style="margin-top:35%;" class="flex gap-2  ">
       <button style="padding: 10px;" class="bg-red-500 gap-2 px-10 py-10 hover:bg-blue-700 text-white font-bold py-2 px-4" (click)="cancelOrders()">Annuler</button>
       <button class="flex items-center gap-2 px-10 py-10 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20" style="padding: 10px;" type="button" (click)="concatenateOrders(this.orders)">
         Commander
