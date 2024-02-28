@@ -5,7 +5,7 @@ import { ListBoxComponent } from './component/list-box/list-box.component';
 
 const routes: Routes = [
 {path: '' , component: LandingComponent},
-{path: 'Board' , component: ListBoxComponent }
+{path: 'board' , component: ListBoxComponent }
 
 ];
 
