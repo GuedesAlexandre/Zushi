@@ -1,0 +1,10 @@
+@import url('https://fonts.cdnfonts.com/css/the-bold-font');
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+
+* {
+    font-family: 'Satoshi';
+}
+
+h3 {
+    font-family: 'The Bold Font';
+}
