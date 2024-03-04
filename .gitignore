@@ -1,4 +1,14 @@
-node_modules/
+# Dossiers
+/node_modules
+/dist
+
+# Fichiers
+/.editorconfig
+/.eslintrc.json
+/tsconfig.json
+/tslint.json
+/karma.conf.js
+/protractonode_modules/
 
 dist/
 .env
