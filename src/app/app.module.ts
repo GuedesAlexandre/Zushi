@@ -15,6 +15,7 @@ import { HeroComponent } from './component/hero/hero.component';
 
 import { ErrorComponent } from './component/error/error.component';
 
+import { AboutComponent } from './component/about/about.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ErrorComponent } from './component/error/error.component';
     ErrorComponent,
     
     HeroComponent,
+    AboutComponent,
     
   ],
   imports: [
