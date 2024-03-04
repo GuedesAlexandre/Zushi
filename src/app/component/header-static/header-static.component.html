@@ -1,7 +1,7 @@
-<nav class=" p-4 md:p-8 flex justify-between items-center">
-    
+
+<nav class=" p-4 md:p-8 flex justify-between items-center md:hidden sm:items-stretch mt-4">
     <div>
-        <svg width="230" height="115" viewBox="0 0 230 115" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <svg width="150" height="115" viewBox="0 0 230 115" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <path d="M132.196 71.8811L110.956 70.3978L111.468 65.4943L123.827 55.0136L109.725 54.5408L110.004 48.9636H129.721L129.981 55.4282L120.847 65.6109L133.031 66.5825L132.202 71.8811H132.196Z" fill="#1D1D1B"/>
             <path d="M143.117 72.4576L141.614 72.3605C138.239 71.7386 136.199 68.7266 135.486 63.3243C135.26 61.5041 135.15 59.6904 135.15 57.8897C135.15 57.4038 135.175 56.4711 135.221 55.0914C135.266 53.7117 135.396 52.2542 135.603 50.7126L135.901 48.4001L141.932 48.7952L141.737 50.596C141.498 52.7983 141.381 54.9942 141.381 57.1771C141.381 58.233 141.426 59.4767 141.517 60.9147C141.608 62.3527 141.893 63.713 142.365 64.989C142.838 66.2651 143.577 67.01 144.581 67.2238L144.84 67.2432C145.721 67.2432 146.472 66.6926 147.081 65.5914C147.697 64.4903 148.182 63.0458 148.545 61.2515C148.908 59.4572 149.167 57.65 149.329 55.8233C149.484 53.9967 149.588 52.4485 149.627 51.166L149.666 49.2681L155.852 49.4041L155.813 71.5119L151.065 72.1467L150.43 68.9403C149.653 70.0221 148.772 70.8188 147.781 71.3305C146.33 72.0819 144.775 72.4576 143.117 72.4576Z" fill="#1D1D1B"/>
             <path d="M171.508 74.2972C168.094 74.2066 165.264 73.4616 163.022 72.0625C160.924 70.7605 159.252 69.478 158.002 68.2278L162.705 63.4603C163.981 65.2935 165.484 66.6667 167.213 67.5736C169.111 68.5905 170.815 69.0958 172.318 69.0958C173.568 69.0958 174.196 68.7266 174.196 67.9881C174.196 67.0813 172.978 65.993 170.536 64.7235C167.608 63.3761 165.413 61.9835 163.955 60.539C162.491 59.0945 161.759 57.3779 161.759 55.3893C161.759 52.9344 162.77 50.8551 164.784 49.1385C166.721 47.4803 169.429 46.6123 172.914 46.5475C175.42 46.5475 177.435 47.2341 178.964 48.6009C180.006 49.5401 180.525 50.7903 180.525 52.3579C180.525 53.1093 180.408 53.9319 180.168 54.8323L173.918 54.8906L173.937 54.1392C173.937 53.3619 173.827 52.7336 173.6 52.2477C173.373 51.7684 173.03 51.5287 172.57 51.5287C171.832 51.5287 170.983 51.7684 170.018 52.2413C169.053 52.7141 168.347 53.3683 167.881 54.1975C167.706 54.5019 167.621 54.8258 167.621 55.1691C167.621 55.7521 167.932 56.4711 168.561 57.3326C169.189 58.1941 170.867 59.224 173.594 60.4094C178.892 62.6895 181.542 64.9761 181.542 67.2691C181.542 69.167 180.661 70.7864 178.905 72.1208C177.15 73.4552 174.675 74.1806 171.501 74.2843L171.508 74.2972Z" fill="#EC6135"/>
@@ -17,7 +17,55 @@
             </defs>
             </svg>
             
+    </div>
+    <button (click)="toggleMenu()" class="text-white focus:outline-none">
+        <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_57_154)">
+            <path d="M4.125 24.75H28.875V22H4.125V24.75ZM4.125 17.875H28.875V15.125H4.125V17.875ZM4.125 8.25V11H28.875V8.25H4.125Z" fill="black"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_57_154">
+            <rect width="33" height="33" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
             
+    </button>
+</nav>
+
+<div class="hidden md:flex md:items-center md:p-7 md:justify-between">
+    <div>
+       <img width="150px;" src="../../../assets/Logo.svg"/>
+             
+    </div>
+    <div class="flex-grow text-center space-x-6">
+        <a href="#" class="text-black text-lg hover:text-[#EC6135]  active:text-[#EC6135]underline">Home</a>
+        <a href="#about" class="text-black text-lg hover:text-[#EC6135]  active:text-[#EC6135]underline">About</a>
+        <a href="#" class="text-black text-lg hover:text-[#EC6135]  active:text-[#EC6135]underline">Foods</a>
+        <a href="#" class="text-black text-lg hover:text-[#EC6135]  active:text-[#EC6135]underline">Menu</a>
+       
+    </div>
+    <div>
+        <button class="p-4 bg-[#EC6135] rounded-lg py-3 px-9 ">Contact Us</button>
+       
     </div>
 
-</nav>
+    <div>
+        
+    </div>
+</div>
+
+<div *ngIf="isMenuOpen" class="md:hidden">
+    <div style="display: flex; flex-direction: column;
+    " class="bg-white p-4 flex-col items-center">   
+        <a href="#" class="text-black text-lg hover:text-[#EC6135] ">Home</a>
+        <a href="#" class="text-black text-lg hover:text-[#EC6135] ">About</a>
+        <a href="#" class="text-black text-lg hover:text-[#EC6135] ">Foods</a>
+        <a href="#" class="text-black text-lg hover:text-[#EC6135] ">Menu</a>
+        <div>
+            <button class="p-4 bg-[#EC6135] rounded-lg py-3 px-6">Contact Us</button>
+           
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,11 @@
+# Dossiers
+/node_modules
+/dist
+
+# Fichiers
+/.editorconfig
+/.eslintrc.json
+/tsconfig.json
+/tslint.json
+/karma.conf.js
+/protractor.conf.js
