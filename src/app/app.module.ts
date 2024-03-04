@@ -22,8 +22,6 @@ import { HeroComponent } from './component/hero/hero.component';
     LandingComponent,
     FooterComponent,
     HeaderStaticComponent,
-    AboutComponent,
-    HeroComponent,
     
   ],
   imports: [
