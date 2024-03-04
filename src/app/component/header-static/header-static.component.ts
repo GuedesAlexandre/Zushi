@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./header-static.component.css']
 })
 export class HeaderStaticComponent {
+  isMenuOpen = false;
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }
