@@ -11,12 +11,15 @@ import { LandingComponent } from './component/landing/landing.component';
 import { __importDefault } from 'tslib'; // Add this import statement
 import { FooterComponent } from './component/footer/footer.component';
 import { HeaderStaticComponent } from './component/header-static/header-static.component';
+
+import { ErrorComponent } from './component/error/error.component';
+
 import { AboutComponent } from './component/about/about.component';
 import { HeroComponent } from './component/hero/hero.component';
 import { FoodComponent } from './component/food/food.component';
 import { BandeauComponent } from './component/bandeau/bandeau.component';
 import { MenuComponent } from './component/menu/menu.component';
-import { 404Component } from './component/404/404.component';
+
 
 @NgModule({
   declarations: [
@@ -30,9 +33,10 @@ import { 404Component } from './component/404/404.component';
     AboutComponent,
     FoodComponent,
     BandeauComponent,
-    MenuComponent
+    MenuComponent,
     FooterComponent,
-    404Component
+    ErrorComponent
+    
     
   ],
   imports: [
