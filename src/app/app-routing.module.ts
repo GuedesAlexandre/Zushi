@@ -4,7 +4,6 @@ import { LandingComponent } from './component/landing/landing.component';
 import { ListBoxComponent } from './component/list-box/list-box.component';
 import { AboutComponent } from './component/about/about.component';
 
-
 const routes: Routes = [
 {path: '' , component: LandingComponent},
 {path: 'board' , component: ListBoxComponent },
