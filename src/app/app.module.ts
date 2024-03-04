@@ -11,6 +11,7 @@ import { LandingComponent } from './component/landing/landing.component';
 import { __importDefault } from 'tslib'; // Add this import statement
 import { FooterComponent } from './component/footer/footer.component';
 import { HeaderStaticComponent } from './component/header-static/header-static.component';
+import { HeroComponent } from './component/hero/hero.component';
 
 import { ErrorComponent } from './component/error/error.component';
 
@@ -25,6 +26,7 @@ import { ErrorComponent } from './component/error/error.component';
     HeaderStaticComponent,
     ErrorComponent,
     
+    HeroComponent,
     
   ],
   imports: [
@@ -32,6 +34,7 @@ import { ErrorComponent } from './component/error/error.component';
     AppRoutingModule,
     HttpClientModule,
     NgOptimizedImage,
+    
     
   ],
   providers: [],
