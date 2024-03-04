@@ -11,6 +11,7 @@ import { LandingComponent } from './component/landing/landing.component';
 import { __importDefault } from 'tslib'; // Add this import statement
 import { FooterComponent } from './component/footer/footer.component';
 import { HeaderStaticComponent } from './component/header-static/header-static.component';
+import { AboutComponent } from './component/about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HeaderStaticComponent } from './component/header-static/header-static.c
     LandingComponent,
     FooterComponent,
     HeaderStaticComponent,
+    AboutComponent,
     
   ],
   imports: [
