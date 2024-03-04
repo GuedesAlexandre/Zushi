@@ -12,6 +12,9 @@ import { __importDefault } from 'tslib'; // Add this import statement
 import { FooterComponent } from './component/footer/footer.component';
 import { HeaderStaticComponent } from './component/header-static/header-static.component';
 
+import { ErrorComponent } from './component/error/error.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +23,8 @@ import { HeaderStaticComponent } from './component/header-static/header-static.c
     LandingComponent,
     FooterComponent,
     HeaderStaticComponent,
+    ErrorComponent,
+    
     
   ],
   imports: [
