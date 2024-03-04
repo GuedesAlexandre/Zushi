@@ -34,8 +34,6 @@ import { ErrorComponent } from './component/error/error.component';
     AppRoutingModule,
     HttpClientModule,
     NgOptimizedImage,
-    
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
