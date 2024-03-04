@@ -37,7 +37,9 @@ export class ListBoxComponent implements OnInit {
         for (const [id, quantity] of Object.entries(this.boxQuantities)) {
           const selectedBox = this.boxes.find((b: any) => b.id === parseInt(id));
           if (selectedBox) {
+            if(quantity >0){
             div.innerHTML += `${quantity}x ${selectedBox.nom} ${selectedBox.prix * quantity}€<br>`;
+            console.log(quantity);}
           }
         }
       }
@@ -50,7 +52,7 @@ export class ListBoxComponent implements OnInit {
       console.log('Prix total:', this.totalPrice);
       const PrixTotal = document.getElementById('prixTotal');
       if (PrixTotal) {
-        PrixTotal.innerHTML = "Le prix total est:"  +this.totalPrice + "€";
+        PrixTotal.innerHTML = "Le prix total est:"  +this.totalPrice.toFixed(2) + "€";
       }
     }
   }

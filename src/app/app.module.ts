@@ -9,13 +9,15 @@ import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import {NgOptimizedImage} from "@angular/common";
 import { FooterComponent } from './component/footer/footer.component';
+import { 404Component } from './component/404/404.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ListBoxComponent,
-    FooterComponent
+    FooterComponent,
+    404Component
     
   ],
   imports: [
