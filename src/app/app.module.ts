@@ -29,6 +29,8 @@ import { AboutComponent } from './component/about/about.component';
     
     HeroComponent,
     AboutComponent,
+    AboutComponent,
+    HeroComponent
     
   ],
   imports: [
