@@ -37,3 +37,14 @@ node_modules/.cache/
 .angular/cache/16.2.12/angular-webpack/b21d3c0a540e38f38af363516a93eddb4e5fdfb5/2.pack
 .DS_Store
 .angular/cache/16.2.12/angular-webpack/b21d3c0a540e38f38af363516a93eddb4e5fdfb5/3.pack
+# Dossiers
+/node_modules
+/dist
+
+# Fichiers
+/.editorconfig
+/.eslintrc.json
+/tsconfig.json
+/tslint.json
+/karma.conf.js
+/protracto

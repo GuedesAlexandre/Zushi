@@ -21,6 +21,7 @@ import { BandeauComponent } from './component/bandeau/bandeau.component';
 import { MenuComponent } from './component/menu/menu.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
