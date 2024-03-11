@@ -13,6 +13,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { HeaderStaticComponent } from './component/header-static/header-static.component';
 import { AboutComponent } from './component/about/about.component';
 import { HeroComponent } from './component/hero/hero.component';
+import { MenuComponent } from './component/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HeroComponent } from './component/hero/hero.component';
     FooterComponent,
     HeaderStaticComponent,
     AboutComponent,
-    HeroComponent
+    HeroComponent,
+    MenuComponent
     
   ],
   imports: [
