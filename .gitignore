@@ -1,7 +1,7 @@
 # Dossiers
 /node_modules
 /dist
-
+/.angular
 # Fichiers
 /.editorconfig
 /.eslintrc.json
