@@ -13,6 +13,8 @@ import { FooterComponent } from './component/footer/footer.component';
 import { HeaderStaticComponent } from './component/header-static/header-static.component';
 import { AboutComponent } from './component/about/about.component';
 import { HeroComponent } from './component/hero/hero.component';
+import { FoodComponent } from './component/food/food.component';
+import { BandeauComponent } from './component/bandeau/bandeau.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { HeroComponent } from './component/hero/hero.component';
     HeaderStaticComponent,
     HeroComponent,
     AboutComponent,
+    FoodComponent,
+    BandeauComponent,
     
   ],
   imports: [
