@@ -16,29 +16,38 @@
 <div class="flex justify-center items-center space-x-20 border-2 border-orange-600" style="
     margin-top: 4%;
 ">
-  <div style="margin-left:12%;" class="w-1/2 mt-20 d-flex " style="overflow-y: scroll; overflow-x: scroll; max-height: 600px; max-width: 900px;">
+  <div style="margin-left:12%;" class="w-1/2 mt-20 d-flex " style="overflow-y: scroll; overflow-x: scroll; max-height: 700px; max-width: 900px;">
     <div *ngFor="let item of boxes; let i = index" class="mb-4 flex flex-col space-x-20 justify-center">
+      <div style="align-items: center;
+      gap: 8px; padding:20px;" class="flex align-center space-x-10 ">
       <div style="margin-left:10%;" class="flex flex-col  ">
+
+     
         <img src="{{item.img}}" alt="{{item.nom}}" width="300" height="300"><span class="font-bold text-xl">{{ item.nom }} </span> <span class="font-bold">{{ item.prix.toFixed(2) }}€</span>
-        <br><div class="text-xl">Compositions</div>
+      </div>
+      <div class="flex flex-col">
+      <div class="text-xl font-bold">Compositions</div>
         <div *ngFor="let aliments of item.id_aliments">
-          <div >
-            {{aliments.quantite}}x     {{aliments.nom }}
+          <div class="w-100" >
+            {{aliments.quantite }} x     {{aliments.nom }} 
           </div>
         </div>
-      </div><br>
-      
-      <div class="d-flex gap-2 space-x-5">
+      </div>
+
+      <div class="flex gap-2 space-x-0 flex-row">
         
-        <button style="padding:10px;" (click)="incrementAndDisplay(item.id)" class="bg-blue-500 hover:bg-blue-700 text-white spac font-bold py-2 px-4 rounded">
+        <button style="padding:10px;" (click)="incrementAndDisplay(item.id)" class="bg-[#EC6135] hover:bg-green-700 text-white spac font-bold py-2 px-4 ">
           +
         </button>
-    
-        <button style="padding:10px;" (click)="decrementAndDisplay(item.id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+   
+        <button style="padding:10px;" (click)="decrementAndDisplay(item.id)" class="bg-[#EC6135] hover:bg-red-700 text-white font-bold py-2 px-4 ">
           -
         </button>
 
       </div>
+      </div>
+     
+      
       <br><br>
     </div>
   </div>

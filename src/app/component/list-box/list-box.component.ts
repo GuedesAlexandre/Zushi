@@ -44,14 +44,19 @@ export class ListBoxComponent implements OnInit {
 
       this.orders.push({ boxId: box.id});
       console.table(this.orders);
-
+   
       // Mettre à jour le prix total
+      if(this.orders.length <11){
       this.totalPrice = this.orders.reduce((total) => total + box.prix, 0);
       console.log('Prix total:', this.totalPrice);
       const PrixTotal = document.getElementById('prixTotal');
+
       if (PrixTotal) {
         PrixTotal.innerHTML = "<p>Prix total : "  +this.totalPrice + "€</p>";
       }
+    }else{
+      alert("Vous ne pouvez pas commander plus de 10 boites pour une même commande");
+    }
     }
   }
 
