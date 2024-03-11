@@ -5,6 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64862770-0ccc-43b1-872f-a884e31e5640" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-angular/src/tools/esbuild/javascript-transformer-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular-devkit/build-angular/src/tools/esbuild/javascript-transformer-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/cli/bin/ng.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/cli/bin/ng.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vite/bin/vite.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/vite/bin/vite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/webpack/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webpack/lib/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/webpack/lib/webpack.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webpack/lib/webpack.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/component/header-static/header-static.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/component/header-static/header-static.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/component/hero/hero.component 2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/component/hero/hero.component 2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/component/hero/hero.component 2.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/component/hero/hero.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/component/hero/hero.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/component/hero/hero.component.spec 2.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/component/landing/landing.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/component/landing/landing.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/component/list-box/list-box.component 2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/component/list-box/list-box.component 2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/component/list-box/list-box.component 2.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/component/list-box/list-box.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/component/list-box/list-box.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/component/list-box/list-box.component.spec 2.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/component/list-box/list-box.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/component/list-box/list-box.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +63,21 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,6 +93,7 @@
       <workItem from="1709036452050" duration="1279000" />
       <workItem from="1709038866115" duration="1003000" />
       <workItem from="1709047113560" duration="1605000" />
+      <workItem from="1710144662009" duration="19000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,8 @@
 # Dossiers
 /node_modules
 /dist
+/.angular
+/.idea
 
 # Fichiers
 /.editorconfig
