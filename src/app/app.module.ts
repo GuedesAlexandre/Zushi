@@ -15,6 +15,7 @@ import { AboutComponent } from './component/about/about.component';
 import { HeroComponent } from './component/hero/hero.component';
 import { FoodComponent } from './component/food/food.component';
 import { BandeauComponent } from './component/bandeau/bandeau.component';
+import { MenuComponent } from './component/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { BandeauComponent } from './component/bandeau/bandeau.component';
     AboutComponent,
     FoodComponent,
     BandeauComponent,
-    
+    MenuComponent
   ],
   imports: [
     BrowserModule,
