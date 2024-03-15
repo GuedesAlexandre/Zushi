@@ -15,6 +15,7 @@ import { HeaderStaticComponent } from './component/header-static/header-static.c
 import { ErrorComponent } from './component/error/error.component';
 
 import { AboutComponent } from './component/about/about.component';
+import { RecapComponent } from './component/recap/recap.component';
 import { HeroComponent } from './component/hero/hero.component';
 import { FoodComponent } from './component/food/food.component';
 import { BandeauComponent } from './component/bandeau/bandeau.component';
@@ -36,7 +37,8 @@ import { MenuComponent } from './component/menu/menu.component';
     BandeauComponent,
     MenuComponent,
     FooterComponent,
-    ErrorComponent
+    ErrorComponent,
+    RecapComponent
     
     
   ],

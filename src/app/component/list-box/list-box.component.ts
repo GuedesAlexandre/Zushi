@@ -125,7 +125,7 @@ concatenateOrders(orders: { boxId: number, prixTotal?: number }[]): any {
  
 
   localStorage.setItem('commande', JSON.stringify(jsonBody));
-  location.reload();
+ 
   return JSON.stringify(jsonBody);
 
 

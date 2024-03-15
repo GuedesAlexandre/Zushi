@@ -4,6 +4,7 @@ import { LandingComponent } from './component/landing/landing.component';
 import { ListBoxComponent } from './component/list-box/list-box.component';
 
 import { AboutComponent } from './component/about/about.component';
+import { RecapComponent } from './component/recap/recap.component';
 
 
 import { FoodComponent } from './component/food/food.component';
