@@ -3,6 +3,7 @@ import { BoxesService } from 'src/app/Services/boxes.service';
 import { OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CommandePostService } from 'src/app/Services/commande-post.service';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-box',
@@ -12,7 +13,7 @@ import { CommandePostService } from 'src/app/Services/commande-post.service';
 export class ListBoxComponent implements OnInit {
   boxes: any = [];
 
-  constructor(private boxesService: BoxesService, private commandePostService: CommandePostService ) { }
+  constructor(private router: Router,private boxesService: BoxesService, private commandePostService: CommandePostService ) { }
 
   ngOnInit(): void {
     this.boxesService.fetchData().subscribe((data: any) => {
@@ -111,6 +112,7 @@ concatenateOrders(orders: { boxId: number, prixTotal?: number }[]): any {
   if(this.orders.length === 0) {
   
     alert('Aucune commande')
+    return;
   }else{
   const currentDate = new Date().toISOString();
   const prixTotal = this.totalPrice;
@@ -124,11 +126,16 @@ concatenateOrders(orders: { boxId: number, prixTotal?: number }[]): any {
     idBoissons: idBoissons
   };
  
- 
+  if(jsonBody == null){
+    alert('Aucune commande')
+   
+  }
+  this.router.navigate(['/recap']);
 
   localStorage.setItem('commande', JSON.stringify(jsonBody));
  
   return JSON.stringify(jsonBody);
+
 
 
 
