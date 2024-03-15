@@ -1,0 +1,23 @@
+<div class="bg-gray-100 p-4 rounded-lg shadow">
+    <h2 class="text-2xl font-bold mb-4">Récapitulatif de commande</h2>
+    
+    <div *ngFor="let date of commandeArray" class="flex flex-col space-y-2">
+        <p>Date: {{ date.date | date }}</p>
+        
+        <div class="flex flex-col space-y-2">
+            <h3 class="text-lg font-bold">Boxs:</h3>
+            <ul>
+                <li *ngFor="let box of date.idBoxs">
+                  Nom : {{ box.nom }}<br>
+                  Prix : {{ box.prix }}
+                </li>
+            </ul>
+        </div>
+        
+        <div>
+            <p>Prix total: {{ date.prixTotal }} €</p>
+        </div>
+        
+        <button routerLink="/board"   (click)='PasseCommande()' class="bg-blue-500 text-white px-4 py-2 rounded">Valider la commande</button>
+    </div>
+</div>

@@ -123,16 +123,11 @@ concatenateOrders(orders: { boxId: number, prixTotal?: number }[]): any {
     idBoxs: idBoxs,
     idBoissons: idBoissons
   };
-  this.commandePostService.postData(jsonBody).subscribe(response => {
-    console.log(response);
-  }, error => {
-    console.error(error);
-  });
- alert("commande passé");
+ 
  
 
   localStorage.setItem('commande', JSON.stringify(jsonBody));
-  location.reload();
+ 
   return JSON.stringify(jsonBody);
 
 

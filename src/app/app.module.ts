@@ -16,6 +16,7 @@ import { HeroComponent } from './component/hero/hero.component';
 import { ErrorComponent } from './component/error/error.component';
 
 import { AboutComponent } from './component/about/about.component';
+import { RecapComponent } from './component/recap/recap.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AboutComponent } from './component/about/about.component';
     
     HeroComponent,
     AboutComponent,
+    RecapComponent,
  
   
   ],
