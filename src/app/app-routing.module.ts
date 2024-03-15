@@ -11,7 +11,6 @@ const routes: Routes = [
 {path: 'board' , component: ListBoxComponent },
 {path: 'about' , component: AboutComponent },
 {path: 'food' , component: FoodComponent}
-
 ];
 
 

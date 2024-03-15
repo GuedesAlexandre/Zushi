@@ -33,11 +33,11 @@ export class ListBoxComponent implements OnInit {
       this.boxQuantities[boxId] = (this.boxQuantities[boxId] || 0) + 1;
       const div = document.getElementById('boxName');
       if (div) {
-        div.innerHTML = '<img src="../../../assets/Group 61.svg"/>';
+        div.innerHTML = '<div></div>';
         for (const [id, quantity] of Object.entries(this.boxQuantities)) {
           const selectedBox = this.boxes.find((b: any) => b.id === parseInt(id));
           if (selectedBox) {
-            div.innerHTML += `${quantity}x ${selectedBox.nom} ${selectedBox.prix * quantity}€<br>`;
+            div.innerHTML += `<p>${quantity}x ${selectedBox.nom} ${selectedBox.prix * quantity}€</p>`;
           }
         }
       }
@@ -50,7 +50,7 @@ export class ListBoxComponent implements OnInit {
       console.log('Prix total:', this.totalPrice);
       const PrixTotal = document.getElementById('prixTotal');
       if (PrixTotal) {
-        PrixTotal.innerHTML = "Le prix total est:"  +this.totalPrice + "€";
+        PrixTotal.innerHTML = "<p>Prix total : "  +this.totalPrice + "€</p>";
       }
     }
   }
@@ -66,7 +66,7 @@ export class ListBoxComponent implements OnInit {
           for (const [id, quantity] of Object.entries(this.boxQuantities)) {
             const selectedBox = this.boxes.find((b: any) => b.id === parseInt(id));
             if (selectedBox && quantity > 0) {
-              div.innerHTML += `${quantity}x ${selectedBox.nom} ${selectedBox.prix * quantity}€<br>`;
+              div.innerHTML += `<p>${quantity}x ${selectedBox.nom} ${selectedBox.prix * quantity}€</p>`;
              
             }
           }
@@ -84,7 +84,7 @@ export class ListBoxComponent implements OnInit {
         this.totalPrice = this.orders.reduce((total, order) => total + box.prix, 0);
         const PrixTotal = document.getElementById('prixTotal');
         if (PrixTotal) {
-          PrixTotal.innerHTML = "Le prix total est:"  + this.totalPrice.toFixed(2) + "€";
+          PrixTotal.innerHTML = "<p>Prix total : "  + this.totalPrice.toFixed(2) + "€</p>";
         }
       }
 
@@ -98,7 +98,7 @@ export class ListBoxComponent implements OnInit {
 concatenateOrders(orders: { boxId: number, prixTotal?: number }[]): any {
   if(this.orders.length === 0) {
   
-    alert('Aucune commande')
+    alert("Impossible de passé la commande : vous n'avez pas d'article dans votre commande.")
   }else{
   const currentDate = new Date().toISOString();
   const prixTotal = this.totalPrice;
@@ -116,7 +116,7 @@ concatenateOrders(orders: { boxId: number, prixTotal?: number }[]): any {
   }, error => {
     console.error(error);
   });
- alert("commande passé");
+ alert("La commande a bien été passé !");
  
 
   localStorage.setItem('commande', JSON.stringify(jsonBody));
@@ -136,7 +136,7 @@ cancelOrders(): void {
     this.orders = [];
     location.reload();
   }else{
-    alert("pas de commande");
+    alert("Impossible d'annuler la commande : vous n'avez pas d'article dans votre commande.");
   }
 }
 
