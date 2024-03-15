@@ -33,7 +33,7 @@ export class ListBoxComponent implements OnInit {
       this.boxQuantities[boxId] = (this.boxQuantities[boxId] || 0) + 1;
       const div = document.getElementById('boxName');
       if (div) {
-        div.innerHTML = '<img src="../../../assets/Group 61.svg"/>';
+        div.innerHTML = '<div></div>';
         for (const [id, quantity] of Object.entries(this.boxQuantities)) {
           const selectedBox = this.boxes.find((b: any) => b.id === parseInt(id));
           if (selectedBox) {
@@ -116,6 +116,7 @@ concatenateOrders(orders: { boxId: number, prixTotal?: number }[]): any {
   }, error => {
     console.error(error);
   });
+  
  alert("commande passé");
  
 
