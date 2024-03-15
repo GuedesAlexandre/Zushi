@@ -25,4 +25,23 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
 # Zushi
+
+Zushi est un projet  d'application web de gestion des commandes pour un restaurant de sushi, l'objecitf est de créer un projet pluridisciplinaire mélangeant des compétence en développement front, développement back et UX/UI Design. Les missiosn étaient de réaliser une RESTAPI dans le langage de notre choix, nous avons choisi Symfony en mode API. Nous vons également réaliser une maquette et intégrer la partie front à l'aide d'Angular liant grâce à ses services le front et le back.
+
+# Lien vers l'api
+
+[RestAPI](https://github.com/GuedesAlexandre/ZushiRestAPI)
+
+
+
+# Lien vers la maquette
+
+[Maquette](https://www.figma.com/file/G9vExLtz6G4M3Kf6DDA4z6/SAE-4.01?type=design&node-id=14%3A2&mode=design&t=KuMFDFSaS42PqGTe-1)
+
+# Diagramme de classe
+
+![Diagramme UML](src/assets/UML.png)
+
