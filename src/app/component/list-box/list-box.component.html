@@ -49,7 +49,7 @@
       <div class="flex gap-2 items-center justify-center">
         <button class="bg-red-500 gap-2 px-5 py-3 hover:bg-red-800 text-white font-bold duration-300 md:text-lg" (click)="cancelOrders()">Annuler</button>
         
-        <button class="flex flex-row gap-2 items-center justify-center bg-orange-brozer hover:bg-orange-800 duration-300 text-white font-bold px-5 py-3 md:text-lg" type="button" (click)="concatenateOrders(this.orders)">
+        <button class="flex flex-row gap-2 items-center justify-center bg-orange-brozer hover:bg-orange-800 duration-300 text-white font-bold px-5 py-3 md:text-lg" type="button" routeurLink="recap" (click)="concatenateOrders(this.orders)">
           Commander
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
