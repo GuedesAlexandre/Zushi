@@ -1,116 +1,63 @@
+<aside class="hidden md:block bg-cover z-10 bg-right h-screen w-1/5 fixed right-0" style="background-image: url('../../../assets/img_market.png');"></aside>
 
+<app-header></app-header>
 
+<div class="md:mr-36 flex flex-col xl:flex-row xl:gap-28">
 
+  <!-- MENU -->
 
+  <div class="overflow-y-scroll xl:h-screen xl:w-2/4">
 
+    <div class="flex flex-col items-center justify-center gap-2 my-2">
+      <h1 class="text-center font-bold text-2xl sm:text-4xl">Menu</h1>
+      <hr class="w-3/6 border-black">
+    </div>
 
-<aside class="hidden md:block" style="background-image: url('../../../assets/img_market.png'); background-size: cover; z-index: 3; background-position: right; height: 100vh; width: 20%; position: fixed; right: 0;"></aside>
+    <div *ngFor="let item of boxes; let i index" class="flex flex-col justify-center items-center my-4">
+      <img src="{{item.img}}" alt="{{item.nom}}" class="w-52 h-auto">
+      <p class="sm:text-lg">{{ item.nom }}</p>
+      <span class="text-center w-11/12 md:w-9/12 text-gray-500">
+        <span>•</span>
+        <span *ngFor="let aliments of item.id_aliments" class="text-sm sm:text-base">
+          {{ aliments.nom }} •
+        </span>
+      </span>
 
-<div  >
-  <app-header></app-header>
-<div  >
-  <app-header></app-header>
-
-
-</div>
-<br>
-<h1  style="margin-left: 3%;"class=" mx-7 font-bold text-5xl"> Bienvenue sur le board de commande Zushi !</h1>
-<div class="flex justify-center items-center space-x-20" style="
-    margin-top: 12%;
-">
-  <div style="margin-left:12%;" class="w-1/2 mt-20 d-flex " style="overflow-y: scroll; max-height: 600px; max-width: 900px;">
-    <div *ngFor="let item of boxes; let i = index" class="mb-4 flex flex-col space-x-20 justify-center">
-      <div style="margin-left:10%;" class="flex flex-col  ">
-        <img src="{{item.img}}" alt="{{item.nom}}" width="300" height="300"><span class="font-bold text-xl">{{ item.nom }} </span> <span class="font-bold">{{ item.prix.toFixed(2) }}€</span>
-        <br><div class="text-xl">Compositions</div>
-        <div *ngFor="let aliments of item.id_aliments">
-          <div >
-            {{aliments.quantite}}x     {{aliments.nom }}
-          </div>
-        </div>
-      </div><br>
-      
-      <div class="d-flex gap-2 space-x-5">
-        
-        <button style="padding:10px;" (click)="incrementAndDisplay(item.id)" class="bg-blue-500 hover:bg-blue-700 text-white spac font-bold py-2 px-4 rounded">
-          +
-        </button>
-    
-        <button style="padding:10px;" (click)="decrementAndDisplay(item.id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-          -
-        </button>
-
+      <div class="flex flex-row gap-4 my-1">
+        <button (click)="incrementAndDisplay(item.id)" class="px-2 bg-orange-brozer">+</button>
+        <span>{{ boxQuantities[item.id] ? boxQuantities[item.id] : 0 }}</span>
+        <button (click)="decrementAndDisplay(item.id)" class="px-2 bg-orange-brozer">-</button>
       </div>
-      <br><br>
-      <br><br>
+      <span class="text-lg font-bold">{{ item.prix.toFixed(2) }}€</span>
     </div>
-  </div>
-  <div class="w-1/2 space-x-50">
-    <div id="boxName" class="w-1/2"></div>
-    <div  class="d-flex  "style="font-weight: bold;"id="prixTotal"></div>
 
-    <div class="flex gap-2 ">
-      <button style="padding: 10px;" class="bg-red-500 gap-2 px-10 py-10 hover:bg-blue-700 text-white font-bold py-2 px-4" (click)="cancelOrders()">Annuler</button>
-      <button class="flex items-center gap-2 px-10 py-10 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20" style="padding: 10px;" type="button" (click)="concatenateOrders(this.orders)">
-        Commander
-        
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
-        </svg>
-      </button>
+  </div>
+
+  <!-- PANIER -->
+
+  <div>
+
+    <div class="flex flex-col items-center justify-center gap-2 my-2" id="panier">
+      <h1 class="text-center font-bold text-2xl sm:text-4xl">Panier</h1>
+      <hr class="w-3/6 border-black">
     </div>
-   
-  
-    
-  </div>
-</div>
-<br>
-<h1  style="margin-left: 3%;"class=" mx-7 font-bold text-5xl"> Bienvenue sur le board de commande Zushi !</h1>
-<div class="flex justify-center items-center space-x-20" style="
-    margin-top: 12%;
-">
-  <div style="margin-left:12%;" class="w-1/2 mt-20 d-flex " style="overflow-y: scroll; max-height: 600px; max-width: 900px;">
-    <div *ngFor="let item of boxes; let i = index" class="mb-4 flex flex-col space-x-20 justify-center">
-      <div style="margin-left:10%;" class="flex flex-col  ">
-        <img src="{{item.img}}" alt="{{item.nom}}" width="300" height="300"><span class="font-bold text-xl">{{ item.nom }} </span> <span class="font-bold">{{ item.prix.toFixed(2) }}€</span>
-        <br><div class="text-xl">Compositions</div>
-        <div *ngFor="let aliments of item.id_aliments">
-          <div >
-            {{aliments.quantite}}x     {{aliments.nom }}
-          </div>
-        </div>
-      </div><br>
-      
-      <div class="d-flex gap-2 space-x-5">
-        
-        <button style="padding:10px;" (click)="incrementAndDisplay(item.id)" class="bg-blue-500 hover:bg-blue-700 text-white spac font-bold py-2 px-4 rounded">
-          +
-        </button>
-    
-        <button style="padding:10px;" (click)="decrementAndDisplay(item.id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-          -
-        </button>
 
+    <div class="flex flex-col items-center justify-center">
+      <div id="boxName" class="mb-2 flex flex-col items-center justify-center md:text-lg"></div>
+      <div class="flex font-bold mb-2 md:text-lg xl:text-xl" id="prixTotal"></div>
+    
+      <div class="flex gap-2 items-center justify-center">
+        <button class="bg-red-500 gap-2 px-5 py-3 hover:bg-red-800 text-white font-bold duration-300 md:text-lg" (click)="cancelOrders()">Annuler</button>
+        
+        <button class="flex flex-row gap-2 items-center justify-center bg-orange-brozer hover:bg-orange-800 duration-300 text-white font-bold px-5 py-3 md:text-lg" type="button" (click)="concatenateOrders(this.orders)">
+          Commander
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+          </svg>
+        </button>
       </div>
-      <br><br>
-    </div>
-  </div>
-  <div class="w-1/2 space-x-50">
-    <div id="boxName" class="w-1/2"></div>
-    <div  class="d-flex  "style="font-weight: bold;"id="prixTotal"></div>
 
-    <div class="flex gap-2 ">
-      <button style="padding: 10px;" class="bg-red-500 gap-2 px-10 py-10 hover:bg-blue-700 text-white font-bold py-2 px-4" (click)="cancelOrders()">Annuler</button>
-      <button class="flex items-center gap-2 px-10 py-10 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20" style="padding: 10px;" type="button" (click)="concatenateOrders(this.orders)">
-        Commander
-        
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
-        </svg>
-      </button>
     </div>
-   
-  
-    
+
   </div>
 </div>
