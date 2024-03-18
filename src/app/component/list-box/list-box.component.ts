@@ -34,11 +34,18 @@ export class ListBoxComponent implements OnInit {
       this.boxQuantities[boxId] = (this.boxQuantities[boxId] || 0) + 1;
       const div = document.getElementById('boxName');
       if (div) {
-        div.innerHTML = '<img src="../../../assets/Group 61.svg"/>';
+        div.innerHTML = '<div></div>';
         for (const [id, quantity] of Object.entries(this.boxQuantities)) {
           const selectedBox = this.boxes.find((b: any) => b.id === parseInt(id));
           if (selectedBox) {
-            div.innerHTML += `${quantity}x ${selectedBox.nom} ${selectedBox.prix * quantity}€<br>`;
+            if(quantity >0 ){
+             
+              if (quantity < 11){
+                div.innerHTML += `${quantity}x ${selectedBox.nom} ${selectedBox.prix * quantity}€<br>`;
+            console.log(quantity);}else{
+              alert("Vous ne pouvez pas commander plus de 10 boites pour une même commande");
+            }
+              }
           }
         }
       }
@@ -53,7 +60,7 @@ export class ListBoxComponent implements OnInit {
       const PrixTotal = document.getElementById('prixTotal');
 
       if (PrixTotal) {
-        PrixTotal.innerHTML = "Le prix total est:"  +this.totalPrice + "€";
+        PrixTotal.innerHTML = "Le prix total est:"  +this.totalPrice.toFixed(2) + "€";
       }
     }else{
       alert("Vous ne pouvez pas commander plus de 10 boites pour une même commande");
@@ -105,6 +112,7 @@ concatenateOrders(orders: { boxId: number, prixTotal?: number }[]): any {
   if(this.orders.length === 0) {
   
     alert('Aucune commande')
+    return;
   }else{
   const currentDate = new Date().toISOString();
   const prixTotal = this.totalPrice;
@@ -117,13 +125,12 @@ concatenateOrders(orders: { boxId: number, prixTotal?: number }[]): any {
     idBoxs: idBoxs,
     idBoissons: idBoissons
   };
-  this.commandePostService.postData(jsonBody).subscribe(response => {
-    console.log(response);
-  }, error => {
-    console.error(error);
-  });
- alert("commande passé");
  
+  if(jsonBody == null){
+    alert('Aucune commande')
+   
+  }
+  this.router.navigate(['/recap']);
 
   localStorage.setItem('commande', JSON.stringify(jsonBody));
  
