@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,27 +19,28 @@ import { BandeauComponent } from './component/bandeau/bandeau.component';
 import { MenuComponent } from './component/menu/menu.component';
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    ListBoxComponent,
-    LandingComponent,
-    FooterComponent,
-    HeaderStaticComponent,
-    HeroComponent,
-    AboutComponent,
-    FoodComponent,
-    BandeauComponent,
-    MenuComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    NgOptimizedImage
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+  @NgModule({
+    declarations: [
+      AppComponent,
+      HeaderComponent,
+      ListBoxComponent,
+      LandingComponent,
+      FooterComponent,
+      HeaderStaticComponent,
+      HeroComponent,
+      AboutComponent,
+     FoodComponent,
+      BandeauComponent,
+ MenuComponent
+    ],
+    imports: [
+      BrowserModule,
+      AppRoutingModule,
+      HttpClientModule,
+
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+  })
+  export class AppModule { }
+   

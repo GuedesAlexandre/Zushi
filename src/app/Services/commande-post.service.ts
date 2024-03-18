@@ -10,7 +10,7 @@ export class CommandePostService {
   constructor(private http: HttpClient) { }
   
   postData(data: any): Observable<any> {
-    const apiUrl = 'http://localhost:8001/api/commandes'; // Remplacez par l'URL de votre API
+    const apiUrl = 'http://localhost:8000/api/commandes'; // Remplacez par l'URL de votre API
   
     return this.http.post(apiUrl, data);
   }

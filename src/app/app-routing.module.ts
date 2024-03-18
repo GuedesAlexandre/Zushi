@@ -15,7 +15,9 @@ const routes: Routes = [
 {path: '' , component: LandingComponent},
 {path: 'board' , component: ListBoxComponent },
 {path: 'about' , component: AboutComponent },
-{path: 'food' , component: FoodComponent}
+{path: 'food' , component: FoodComponent},
+{path: 'recap' , component: RecapComponent},
+{path: '**' , component: ErrorComponent}
 
 ];
 
