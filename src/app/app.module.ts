@@ -16,9 +16,12 @@ import { HeroComponent } from './component/hero/hero.component';
 import { FoodComponent } from './component/food/food.component';
 import { BandeauComponent } from './component/bandeau/bandeau.component';
 import { MenuComponent } from './component/menu/menu.component';
+import { ContactComponent } from './component/contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
+    ContactComponent,
     AppComponent,
     HeaderComponent,
     ListBoxComponent,
@@ -29,9 +32,11 @@ import { MenuComponent } from './component/menu/menu.component';
     AboutComponent,
     FoodComponent,
     BandeauComponent,
-    MenuComponent
+    MenuComponent,
+    ContactComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
