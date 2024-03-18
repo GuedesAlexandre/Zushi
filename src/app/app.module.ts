@@ -11,16 +11,11 @@ import { LandingComponent } from './component/landing/landing.component';
 import { __importDefault } from 'tslib'; // Add this import statement
 import { FooterComponent } from './component/footer/footer.component';
 import { HeaderStaticComponent } from './component/header-static/header-static.component';
-
-import { ErrorComponent } from './component/error/error.component';
-
 import { AboutComponent } from './component/about/about.component';
-import { RecapComponent } from './component/recap/recap.component';
 import { HeroComponent } from './component/hero/hero.component';
 import { FoodComponent } from './component/food/food.component';
 import { BandeauComponent } from './component/bandeau/bandeau.component';
 import { MenuComponent } from './component/menu/menu.component';
-
 
 
 @NgModule({
@@ -36,18 +31,12 @@ import { MenuComponent } from './component/menu/menu.component';
     FoodComponent,
     BandeauComponent,
     MenuComponent,
-    FooterComponent,
-    ErrorComponent,
-    RecapComponent
-    
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgOptimizedImage,
-    
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

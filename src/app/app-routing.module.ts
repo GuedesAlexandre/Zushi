@@ -8,13 +8,18 @@ import { RecapComponent } from './component/recap/recap.component';
 
 
 import { FoodComponent } from './component/food/food.component';
+import { ErrorComponent } from './component/error/error.component';
 
 
 const routes: Routes = [
 {path: '' , component: LandingComponent},
 {path: 'board' , component: ListBoxComponent },
 {path: 'about' , component: AboutComponent },
-{path: 'food' , component: FoodComponent}
+{path: 'food' , component: FoodComponent},
+{path: 'recap' , component: RecapComponent},
+{
+  path: '**', component: ErrorComponent}
+
 ];
 
 
