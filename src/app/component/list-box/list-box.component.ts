@@ -40,7 +40,7 @@ export class ListBoxComponent implements OnInit {
           if (selectedBox) {
             if(quantity >0 ){
              
-              if (quantity < 11){
+              if (quantity < 10){
                 div.innerHTML += `${quantity}x ${selectedBox.nom} ${selectedBox.prix * quantity}€<br>`;
             console.log(quantity);}else{
               alert("Vous ne pouvez pas commander plus de 10 boites pour une même commande");
@@ -54,7 +54,7 @@ export class ListBoxComponent implements OnInit {
       console.table(this.orders);
    
       // Mettre à jour le prix total
-      if(this.orders.length <11){
+      if(this.orders.length <= 10){
       this.totalPrice = this.orders.reduce((total) => total + box.prix, 0);
       console.log('Prix total:', this.totalPrice);
       const PrixTotal = document.getElementById('prixTotal');

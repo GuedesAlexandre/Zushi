@@ -9,6 +9,10 @@ import { RecapComponent } from './component/recap/recap.component';
 
 import { FoodComponent } from './component/food/food.component';
 import { ErrorComponent } from './component/error/error.component';
+import { ValidComponent } from './component/valid/valid.component';
+import { ContactComponent } from './component/contact/contact.component';
+import { RgpdComponent } from './component/rgpd/rgpd.component';
+import { ConfidentialiteComponent } from './component/confidentialite/confidentialite.component';
 
 
 const routes: Routes = [
@@ -17,7 +21,13 @@ const routes: Routes = [
 {path: 'about' , component: AboutComponent },
 {path: 'food' , component: FoodComponent},
 {path: 'recap' , component: RecapComponent},
-{path: '**' , component: ErrorComponent}
+{path: 'valid', component: ValidComponent},
+{path: 'contact', component: ContactComponent},
+{path: 'rgpd', component: RgpdComponent},
+{path: 'confidentialite', component: ConfidentialiteComponent},
+{path: '**' , component: ErrorComponent},
+
+
 
 ];
 

@@ -18,7 +18,7 @@
     <div *ngFor="let date of commandeArray" class="mt-2 md:flex md:flex-col md:justify-start md:items-start   
     ">
       <p class="text-center lg:text-xl xl:text-2xl">Date de la commande:<br /></p>
-      <p class="text-center font-bold lg:text-md xl:text-xl">{{ date.date  }}</p>
+      <p class="text-center font-bold lg:text-md xl:text-xl">{{ date.date | date  }}</p>
 
       <div class="md:flex md:flex-col md:justify-start md:items-start lg:mt-5">
         <h3 class="text-center font-bold lg:text-xl xl:text-2xl">Boxs:</h3>

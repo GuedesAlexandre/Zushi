@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommandePostService } from 'src/app/Services/commande-post.service';
 import { BoxesService } from 'src/app/Services/boxes.service';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-recap',
@@ -10,7 +11,7 @@ import { BoxesService } from 'src/app/Services/boxes.service';
 export class RecapComponent implements OnInit {
   commandeArray: any[] = [];
 
-  constructor( private boxesService: BoxesService,private commandePostService: CommandePostService ) { }
+  constructor( private boxesService: BoxesService,private commandePostService: CommandePostService, private routeur : Router) { }
 
 
 ngOnInit(): void {
@@ -68,8 +69,9 @@ replaceBoxIdsWithNames(serviceOutput: any[], commandeArray: any[]): any[] {
       const parsedBody = JSON.parse(jsonBody); // Convertir la chaîne en objet JSON
       this.commandePostService.postData(parsedBody).subscribe(response => { // Envoyer l'objet JSON
         console.log(response);
-        alert("commande passé");
-        localStorage.removeItem('commande');
+       
+        this.routeur.navigate(['/valid']);
+        
       }, error => {
         console.error(error);
       });

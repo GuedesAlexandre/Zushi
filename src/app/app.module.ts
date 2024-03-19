@@ -18,6 +18,11 @@ import { FoodComponent } from './component/food/food.component';
 import { BandeauComponent } from './component/bandeau/bandeau.component';
 import { MenuComponent } from './component/menu/menu.component';
 import { RecapComponent } from './component/recap/recap.component';
+import { ValidComponent } from './component/valid/valid.component';
+import { ContactComponent } from './component/contact/contact.component';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RgpdComponent } from './component/rgpd/rgpd.component';
+import { ConfidentialiteComponent } from './component/confidentialite/confidentialite.component';
 
 
   @NgModule({
@@ -33,13 +38,19 @@ import { RecapComponent } from './component/recap/recap.component';
      FoodComponent,
       BandeauComponent,
     MenuComponent,
-    RecapComponent
+    RecapComponent,
+    ValidComponent,
+    ContactComponent,
+    RgpdComponent,
+    ConfidentialiteComponent
     ],
     imports: [
       CommonModule,
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
+      FormsModule,
+      ReactiveFormsModule,
 
     ],
     providers: [],

@@ -1,0 +1,22 @@
+<aside
+  class="hidden md:block"
+  style="
+    background-image: url(&quot;../../../assets/img_market.png&quot;);
+    background-size: cover;
+    z-index: 3;
+    background-position: right;
+    height: 100vh;
+    width: 20%;
+    position: fixed;
+    right: 0;
+  "
+></aside>
+<app-header></app-header>
+<div class="flex flex-col justify-center items-center p-3 md:flex md:flex-col md:justify-start md:items-start md:text-xl" *ngIf="Commandes == true">
+    <div class="w-1/2 md:w-1/4"><img src="../../../assets/20944096.jpg"/></div>
+    <div class="text-xl font-bold">Commande validée</div>
+    <div class="text-center">Votre commande sera prête pour réception dans 15 minutes !</div>
+    <div class="text-center"> Vous allez être redirigé vers l'acceuil dans 2 secondes</div>
+
+
+</div>
