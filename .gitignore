@@ -44,7 +44,7 @@ node_modules/.cache/
 # Fichiers
 /.editorconfig
 /.eslintrc.json
-/tsconfig.json
+
 /tslint.json
 /karma.conf.js
 /protracto
