@@ -136,7 +136,7 @@ Zushi est un projet d'application web de gestion des commandes pour un restauran
                            |              |                                           |                     
                            |              |                                           |                     
                            |              |                                           |                     
-                           |              |      11. Livrer la commande              |                     
+                           |              |      11. Récupère la commande              |                     
                            +------------------------------------------->                     
                            |              |                                           |                     
                            |              |                                           |                     
