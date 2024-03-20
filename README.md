@@ -29,7 +29,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # Zushi
 
 Zushi est un projet d'application web de gestion des commandes pour un restaurant de sushi, l'objecitf est de créer un projet pluridisciplinaire mélangeant des compétence en développement front, développement back et UX/UI Design. Les missiosn étaient de réaliser une RESTAPI dans le langage de notre choix, nous avons choisi Symfony en mode API. Nous vons également réaliser une maquette et intégrer la partie front à l'aide d'Angular liant grâce à ses services le front et le back.
-Zushi est un projet d'application web de gestion des commandes pour un restaurant de sushi, l'objecitf est de créer un projet pluridisciplinaire mélangeant des compétence en développement front, développement back et UX/UI Design. Les missiosn étaient de réaliser une RESTAPI dans le langage de notre choix, nous avons choisi Symfony en mode API. Nous vons également réaliser une maquette et intégrer la partie front à l'aide d'Angular liant grâce à ses services le front et le back.
 
 # Lien vers l'api
 
@@ -43,3 +42,152 @@ Zushi est un projet d'application web de gestion des commandes pour un restauran
 
 ![Diagramme UML](src/assets/UML.png)
 
+# Architecture fonctionnelle d' l'application
+
+![Architecture](src/assets/archi.png)
+
+# Diagramme Use Case
+
+![Use_case](src/assets/Use.jpg)
+
+# Diagramme D'activités
+
+```rust
+                                                                                                         
+                                                                                                                      
+                                                                                                         
+                           +---------------------------+                  +-------------------------+   
+                           |                           |                  |                         |   
+                           |      Client               |                  |       Serveur           |   
+                           |                           |                  |                         |   
+                           +--------------+------------+                  +------------+------------+   
+                                          |                                           |                     
+                                          |                                           |                     
+                                          |                                           |                     
+                                          |                                           |                     
+                                          |                                           |                     
+                                          |                                           |                     
+                                          |                                           |                     
+                                          |                                           |                     
+                                          |                                           |                     
+                                          |                                           |                     
+                                          |      1. Accéder à l'application            |                     
+                                          +------------------------------------------->                     
+                                          |                                           |                     
+                                          |                                           |                     
+                                          |                                           |                     
+                           +--------------|------------------------------------------->                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |      2. Afficher la liste des sushis      |                     
+                           |              +------------------------------------------->                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |      3. Choisir un type de sushi          |                     
+                           |              +------------------------------------------->                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |      4. Sélectionner un sushi              |                     
+                           |              +------------------------------------------->                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |      5. Ajouter au panier                 |                     
+                           |              +------------------------------------------->                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |      [Achats terminés?]                   |                     
+                           +--------------|-------------------------------------------+                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |      Oui     |          Non                              |                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |      6. Passer à la caisse                |                     
+                           |              +------------------------------------------->                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |      7. Vérifier la commande              |                     
+                           |              +------------------------------------------->                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |      8. Confirmer la commande             |                     
+                           |              +------------------------------------------->                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |      9. Préparer la commande             |                     
+                           |              +------------------------------------------->                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |      10. Notifier le client              |                     
+                           |              +<-------------------------------------------+                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |      11. Récupère la commande              |                     
+                           +------------------------------------------->                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |                                           |                     
+                           |              |      12. Terminer                         |                     
+                           +------------------------------------------->                     
+
+
+```
+# Format de la structure json des commandes
+
+Ceci est le localstorage au moment de la commande
+
+```json
+[
+  {
+    "date": "2024-03-20T14:54:19.745Z",
+    "idBoissons": [],
+    "idBoxs": [
+      {
+        "nom": "Tasty Blend",
+        "prix": 12.5
+      },
+      {
+        "nom": "Tasty Blend",
+        "prix": 12.5
+      }
+    ],
+    "prixTotal": 25
+  }
+]
+````
+
+Pour l'api nous utilisons un format différent
+
+```json
+{
+  "@context": "/api/contexts/Commandes",
+  "@id": "/api/commandes/60",
+  "@type": "Commandes",
+  "id": 60,
+  "date": "2024-03-20T14:54:19+00:00",
+  "prix_total": 25,
+  "id_boxs": ["/api/boxs/1"],
+  "id_boissons": [],
+  "prixTotal": 25,
+  "idBoxs": ["/api/boxs/1"],
+  "idBoissons": []
+}
+```
+
+# Conclusion
+
+En conclusion, ce projet amène des compétences sérieuses autour de l'architecture de projet FullStack. L'usage d'Angular fut important pour assurer la liaison via les services entre la RestAPI et le front. Nous avons choisi de nous lancer le défi de faire la RestAPI sur Symfony avec APIPlatform cela a demandé beaucoup de documentations mais nosu avons développé une clean architecture mainteable et fonctionnelle. Nous avons donc créé un projet avec une architecture propre et qui nous a fait évoluer dans notre panel de compétences.
