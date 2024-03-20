@@ -1,43 +1,43 @@
-<aside
-  class="hidden md:block"
-  style="
-    background-image: url(&quot;../../../assets/img_market.png&quot;);
-    background-size: cover;
-    z-index: 3;
-    background-position: right;
-    height: 100vh;
-    width: 20%;
-    position: fixed;
-    right: 0;
-  "
-></aside>
+<aside class="hidden md:block bg-cover z-10 bg-right h-screen w-1/5 fixed right-0" style="background-image: url('../../../assets/img_market.png');"></aside>
+
 <app-header></app-header>
-<div class="flex flex-col justify-center items-center  md:p-6 md:items-start md:justify-start">
-  <h1 class="text-xl lg:text-4xl">Récapitulatif de commande</h1>
-  <div class="border-t border-gray-700 my-4">
-    <div *ngFor="let date of commandeArray" class="mt-2 md:flex md:flex-col md:justify-start md:items-start   
-    ">
-      <p class="text-center lg:text-xl xl:text-2xl">Date de la commande:<br /></p>
-      <p class="text-center font-bold lg:text-md xl:text-xl">{{ date.date | date  }}</p>
+
+<div class="flex items-center justify-center md:mr-52">
+
+  <div class="overflow-y-scroll xl:h-screen xl:w-2/4">
+
+    <div class="flex flex-col items-center justify-center gap-2 my-2 sm:mb-4">
+      <h1 class="text-center font-bold text-2xl sm:text-3xl">Récapitulatif de la commande</h1>
+      <hr class="w-3/6 md:w-4/6 border-black">
+    </div>
+
+    <div *ngFor="let date of commandeArray" class="mt-2 flex flex-col items-center justify-center">
+      <div class="text-center">
+        <span class="lg:text-xl xl:text-2xl">Date de la commande : </span>
+        <span class="lg:text-md xl:text-xl">{{ date.date | date  }}</span>
+      </div>
 
       <div class="md:flex md:flex-col md:justify-start md:items-start lg:mt-5">
-        <h3 class="text-center font-bold lg:text-xl xl:text-2xl">Boxs:</h3>
-        <ul class="text-center md:text-left lg:mt-3 lg:text-xl">
+        <ul class="text-center md:text-left lg:mt-3 lg:text-xl mt-2">
           <li *ngFor="let box of date.idBoxs" class="lg:mt-1 xl:text-2xl">
            1 x {{ box.nom }} {{ box.prix }}€<br />
           </li>
         </ul>
       </div>
 
-      <div class="p-4 md:p-0 md: mt-[50%] ">
+      <div class="p-4 md:p-0 mt-[25%] ">
 
       <button routerLink="/board" (click)="PasseCommande()" class=" p-4 bg-[#EC6135] text-white flex flex-row hover:bg-green-700">
-        <div class="flex flex-col x-space-2"><div class="text-left text-md xl:text-xl">Valider la commande </div><div class="text-left text-xl xl:text-2xl">{{ date.prixTotal.toFixed(2) }} € TTC</div>  </div><svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="flex flex-col x-space-2">
+          <div class="text-left text-md xl:text-xl">Valider la commande</div>
+          <div class="text-left text-xl xl:text-2xl">{{ date.prixTotal.toFixed(2) }}€ TTC</div>  
+        </div>
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M20.4378 35.9585L35.7068 19.2166M35.7068 19.2166L19.7013 19.953M35.7068 19.2166L36.4433 35.2221" stroke="white" stroke-width="3.23702" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          
+        </svg>   
       </button>
     </div>
     </div>
+
   </div>
 </div>
