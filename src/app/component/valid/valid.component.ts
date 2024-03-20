@@ -26,7 +26,7 @@ Commandes !: any;
       
       localStorage.clear();
       window.location.href = '/board';
-    }, 2000);
+    }, 4000);
    
   }
 }
