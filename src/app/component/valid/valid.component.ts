@@ -16,17 +16,17 @@ Commandes !: any;
       console.error('Pas de commande');
       this.Commandes = false;
       localStorage.clear();
-      // setTimeout(() => {
-      //   window.location.href = '/board';
-      // }, 1000);
+      setTimeout(() => {
+        window.location.href = '/board';
+      }, 1000);
   }
   else{
     this.Commandes =true;
-    // setTimeout(() => {
+    setTimeout(() => {
       
-    //   localStorage.clear();
-    //   window.location.href = '/board';
-    // }, 4000);
+      localStorage.clear();
+      window.location.href = '/board';
+    }, 4000);
    
   }
 }
