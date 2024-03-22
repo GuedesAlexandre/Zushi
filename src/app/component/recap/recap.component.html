@@ -25,18 +25,22 @@
         </ul>
       </div>
 
-      <div class="p-4 md:p-0 mt-[25%] ">
+      <div class="p-4 md:p-0 mt-[25%] flex flex-row gap-4">
 
-      <button routerLink="/board" (click)="PasseCommande()" class=" p-4 bg-[#EC6135] text-white flex flex-row hover:bg-green-700">
-        <div class="flex flex-col x-space-2">
-          <div class="text-left text-md xl:text-xl">Valider la commande</div>
-          <div class="text-left text-xl xl:text-2xl">{{ date.prixTotal.toFixed(2) }}€ TTC</div>  
-        </div>
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20.4378 35.9585L35.7068 19.2166M35.7068 19.2166L19.7013 19.953M35.7068 19.2166L36.4433 35.2221" stroke="white" stroke-width="3.23702" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>   
-      </button>
-    </div>
+        <button class="py-2 px-5 sm:py-3 bg-red-500 text-white duration-300 hover:bg-red-800" routerLink="../board">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 256 256"><path fill="currentColor" d="M208.49 191.51a12 12 0 0 1-17 17L128 145l-63.51 63.49a12 12 0 0 1-17-17L111 128L47.51 64.49a12 12 0 0 1 17-17L128 111l63.51-63.52a12 12 0 0 1 17 17L145 128Z"/></svg>
+        </button>
+
+        <button routerLink="/board" (click)="PasseCommande()" class="py-2 px-4 sm:py-3 bg-[#EC6135] text-white flex flex-row duration-300 hover:bg-red-800">
+          <div class="flex flex-col x-space-2">
+            <div class="text-left text-sm sm:text-md xl:text-xl">Valider la commande</div>
+            <div class="text-left text-md sm:text-lg lg:text-xl xl:text-2xl">{{ date.prixTotal.toFixed(2) }}€ TTC</div>  
+          </div>
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.4378 35.9585L35.7068 19.2166M35.7068 19.2166L19.7013 19.953M35.7068 19.2166L36.4433 35.2221" stroke="white" stroke-width="3.23702" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
 
   </div>

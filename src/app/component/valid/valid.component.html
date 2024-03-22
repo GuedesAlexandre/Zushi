@@ -1,22 +1,10 @@
-<aside
-  class="hidden md:block"
-  style="
-    background-image: url(&quot;../../../assets/img_market.png&quot;);
-    background-size: cover;
-    z-index: 3;
-    background-position: right;
-    height: 100vh;
-    width: 20%;
-    position: fixed;
-    right: 0;
-  "
-></aside>
+<aside class="hidden md:block bg-cover z-10 bg-right h-screen w-1/5 fixed right-0" style="background-image: url('../../../assets/img_market.png');"></aside>
+
 <app-header></app-header>
-<div class="flex flex-col justify-center items-center p-3 md:flex md:flex-col md:justify-start md:items-start md:text-xl" *ngIf="Commandes == true">
-    <div class="w-1/2 flex flex-col justify-center items-center md:w-1/4"><div class="loader"></div></div>
+
+<div class="flex flex-col justify-center items-center p-3 md:text-xl md:mr-52 gap-5" *ngIf="Commandes == true">
     <div class="text-xl font-bold">Commande validée</div>
     <div class="text-center">Votre commande sera prête pour réception dans 15 minutes !</div>
     <div class="text-center"> Vous allez être redirigé vers l'acceuil dans quelques instants</div>
-
-
+    <div class="w-1/2 flex flex-col justify-center items-center md:w-1/4"><div class="loader"></div></div>
 </div>
